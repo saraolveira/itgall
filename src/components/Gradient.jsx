@@ -1,7 +1,7 @@
 const Gradient = ({ direction }) => {
     return (
         <div
-            className={`w-full h-36 bg-gradient-to-b from-lila-900 to-lila-400 ${
+            className={`w-full h-10 lg:h-36 bg-gradient-to-b from-lila-900 to-lila-400 ${
                 direction === "bottom" ? "bg-gradient-to-b" : "bg-gradient-to-t"
             }`}
         ></div>

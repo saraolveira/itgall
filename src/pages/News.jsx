@@ -4,7 +4,10 @@ import BlogPost from "../components/BlogPost.jsx"
 const News = ({ posts }) => {
     return (
         <>
-            <div className="w-screen h-svh bg-lila-900 p-8  lg:p-20" id="news">
+            <div
+                className="w-screen min-h-svh bg-lila-900 p-8  lg:p-20"
+                id="news"
+            >
                 <div className="flex flex-col flex-wrap gap-5 lg:gap-0 lg:flex-row lg:justify-between ">
                     {posts.map((post) => (
                         <BlogPost
