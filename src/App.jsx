@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion"
 import ScrollToTop from "./components/ScrollToTop.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Home from "./pages/Home.jsx"
+import News from "./pages/News.jsx"
 import SinglePost from "./components/SinglePost.jsx"
 import LivingLabPage from "./components/LivingLabPage.jsx"
 
@@ -44,6 +45,10 @@ const App = () => {
         {
             path: "/",
             element: <Home posts={posts} livingLabs={livingLabs} />,
+        },
+        {
+            path: "/blog",
+            element: <News posts={posts} />,
         },
         {
             path: "/posts/:id",
