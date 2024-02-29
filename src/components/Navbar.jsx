@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion"
 import { MenuToggle } from "./MenuToggle.jsx"
 import MenuItem from "./MenuItem.jsx"
 import { Link } from "react-router-dom"
+import MenuOther from "./MenuOther.jsx"
 const Navbar = () => {
     const [isOpen, toggleOpen] = useCycle(false, true)
 
@@ -44,7 +45,7 @@ const Navbar = () => {
 
     return (
         <header>
-            <nav className="relative z-20 h-20 p-3.5 lg:p-8 xl:p-12 flex justify-between items-center text-lila-900 text-l xl:text-xl font-bold font-body">
+            <nav className="relative z-20 flex justify-between items-center p-3.5 lg:p-8 xl:p-12 h-20 font-body font-bold text-l text-lila-900 xl:text-xl">
                 <div className="flex gap-3 md:gap-4 lg:gap-6">
                     <Link to="/">
                         <motion.div
@@ -54,14 +55,14 @@ const Navbar = () => {
                             <motion.img
                                 src="/itgall.svg"
                                 alt="Logo ITGALL"
-                                className="h-16 z-40"
+                                className="z-40 h-16"
                                 initial={false}
                                 variants={dark}
                             />
                             <motion.img
                                 src="/itgall-blanco.svg"
                                 alt="Logo ITGALL negativo"
-                                className="absolute top-0 left-0 h-16 z-40"
+                                className="top-0 left-0 z-40 absolute h-16"
                                 initial={false}
                                 variants={light}
                             />
@@ -69,18 +70,12 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <div className="hidden lg:flex space-x-6">
+                <div className="lg:flex space-x-6 hidden">
                     <Link
                         to="/"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         Home
-                    </Link>
-                    <Link
-                        to="/"
-                        className="hover:text-amarillo transition-colors duration-300"
-                    >
-                        ITGALL
                     </Link>
                     <Link
                         to="/"
@@ -99,6 +94,12 @@ const Navbar = () => {
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         News
+                    </Link>
+                    <Link
+                        to="/"
+                        className="hover:text-amarillo transition-colors duration-300"
+                    >
+                        Contact
                     </Link>
                 </div>
                 <motion.div
@@ -128,11 +129,6 @@ const Navbar = () => {
                         <MenuItem
                             toggle={() => toggleOpen()}
                             path="/"
-                            text="ITGALL"
-                        />
-                        <MenuItem
-                            toggle={() => toggleOpen()}
-                            path="/"
                             text="Network"
                         />
                         <MenuItem
@@ -145,6 +141,21 @@ const Navbar = () => {
                             path="/"
                             text="News"
                         />
+                        <MenuItem
+                            toggle={() => toggleOpen()}
+                            path="/"
+                            text="Contact"
+                        />
+                        <MenuOther
+                            toggle={() => toggleOpen()}
+                            path="/"
+                            text="Test in ITGALL"
+                        />
+                        <MenuOther
+                            toggle={() => toggleOpen()}
+                            path="/"
+                            text="Be part of the ITGALL network"
+                        />
                     </motion.div>
                     <MenuToggle toggle={() => toggleOpen()} />
                 </motion.div>
@@ -152,11 +163,11 @@ const Navbar = () => {
         </header>
     )
     // return (
-    //     <nav className="w-screen h-20 py-2 px-8 flex justify-between items-center">
+    //     <nav className="flex justify-between items-center px-8 py-2 w-screen h-20">
     //         <div>
     //             <img src="/itgall.svg" alt="Logo ITGALL" className="w-48" />
     //         </div>
-    //         <div className="flex gap-10 font-body font-extrabold text-2xl mr-8 text-lila-900">
+    //         <div className="flex gap-10 mr-8 font-body font-extrabold text-2xl text-lila-900">
     //             <Link
     //                 to="/"
     //                 className="hover:text-amarillo transition-colors duration-300"

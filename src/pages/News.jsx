@@ -5,10 +5,10 @@ const News = ({ posts }) => {
     return (
         <>
             <div
-                className="w-screen min-h-svh bg-lila-900 p-8  lg:p-20"
+                className="bg-lila-900 p-8 lg:p-20 w-screen min-h-svh"
                 id="news"
             >
-                <div className="flex flex-col flex-wrap gap-5 lg:gap-0 lg:flex-row lg:justify-between ">
+                <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between gap-5 lg:gap-0 ">
                     {posts.map((post) => (
                         <BlogPost
                             key={post.id}

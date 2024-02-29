@@ -11,7 +11,7 @@ const LivingLabPage = ({ livingLabs }) => {
             (livingLab) => livingLab.slug === id
         )
         setLivingLab(livingLabFinal[0])
-        console.log(livingLabFinal[0])
+        // console.log(livingLabFinal[0])
     }
 
     useEffect(() => {

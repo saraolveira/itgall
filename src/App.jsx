@@ -8,10 +8,12 @@ import Home from "./pages/Home.jsx"
 import News from "./pages/News.jsx"
 import SinglePost from "./components/SinglePost.jsx"
 import LivingLabPage from "./components/LivingLabPage.jsx"
+import ProjectPage from "./components/ProjectPage.jsx"
 
 const App = () => {
     const [posts, setPosts] = useState([])
     const [livingLabs, setLivingLabs] = useState([])
+    const [projects, setProjects] = useState([])
 
     const fetchPosts = async () => {
         const response = await fetch(
@@ -41,10 +43,30 @@ const App = () => {
         fetchLivingLabs()
     }, [])
 
+    const fetchProjects = async () => {
+        const response = await fetch(
+            "https://blog.itgall.tech/wp-json/wp/v2/proyecto?acf_format=standard&per_page=100"
+        )
+        const responseProjects = await response.json()
+
+        setProjects(responseProjects)
+        // console.log(projects)
+    }
+
+    useEffect(() => {
+        fetchProjects()
+    }, [])
+
     const element = useRoutes([
         {
             path: "/",
-            element: <Home posts={posts} livingLabs={livingLabs} />,
+            element: (
+                <Home
+                    posts={posts}
+                    livingLabs={livingLabs}
+                    projects={projects}
+                />
+            ),
         },
         {
             path: "/blog",
@@ -58,6 +80,10 @@ const App = () => {
             path: "/living-lab/:id",
             element: <LivingLabPage livingLabs={livingLabs} />,
         },
+        {
+            path: "/project/:id",
+            element: <ProjectPage projects={projects} />,
+        },
     ])
 
     const location = useLocation()
@@ -65,8 +91,9 @@ const App = () => {
     if (!element) return null
 
     return (
-        <div className="overflow-hidden font-body">
+        <div className="font-body overflow-hidden">
             <Navbar />
+
             <AnimatePresence mode="wait" initial={false}>
                 {React.cloneElement(element, { key: location.pathname })}
                 <ScrollToTop />

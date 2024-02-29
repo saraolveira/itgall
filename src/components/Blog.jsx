@@ -5,11 +5,11 @@ const Blog = ({ posts }) => {
     const lastPosts = posts.slice(0, 4)
     return (
         <div
-            className="w-screen bg-lila-900 p-8  lg:p-20 flex flex-col gap-8"
+            className="flex flex-col gap-8 bg-lila-400 p-8 lg:p-20 w-screen"
             id="news"
         >
-            <h2 className="text-5xl font-extrabold text-amarillo">News</h2>
-            <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row lg:justify-between ">
+            <h2 className="font-extrabold text-5xl text-amarillo">News</h2>
+            <div className="flex lg:flex-row flex-col lg:justify-between gap-5 lg:gap-10 ">
                 {lastPosts.map((post) => (
                     <BlogPost
                         key={post.id}
@@ -21,9 +21,9 @@ const Blog = ({ posts }) => {
                 ))}
             </div>
             <Link to="/blog" className="self-end">
-                <div className="w-fit py-2 px-8 bg-amarillo cursor-pointer  rounded-3xl flex justify-center items-center group hover:bg-lila-100 transition duration-300">
-                    <p className="text-lila-900 font-extrabold text-xl uppercase group-hover:text-amarillo transition duration-300">
-                        todas las noticias
+                <div className="flex justify-center items-center bg-amarillo hover:bg-lila-100 px-8 py-2 rounded-3xl w-fit transition duration-300 cursor-pointer group">
+                    <p className="group-hover:text-amarillo font-extrabold text-lila-900 text-xl uppercase transition duration-300">
+                        All news
                     </p>
                 </div>
             </Link>
