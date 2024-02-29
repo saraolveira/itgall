@@ -1,5 +1,6 @@
 import LivingLab from "./LivingLab.jsx"
 import { Link } from "react-router-dom"
+import Map from "./Map.jsx"
 
 const LivingLabs = ({ livingLabs }) => {
     return (
@@ -7,8 +8,8 @@ const LivingLabs = ({ livingLabs }) => {
             <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
                 Living Lab Network
             </h2>
-
-            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-24 ">
+            <Map livingLabs={livingLabs} />
+            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-24 mt-8 ">
                 {livingLabs.map((livingLab) => (
                     <LivingLab
                         key={livingLab.id}

@@ -25,10 +25,6 @@ const App = () => {
         // console.log(posts)
     }
 
-    useEffect(() => {
-        fetchPosts()
-    }, [])
-
     const fetchLivingLabs = async () => {
         const response = await fetch(
             "https://blog.itgall.tech/wp-json/wp/v2/living-lab?acf_format=standard&per_page=100"
@@ -38,10 +34,6 @@ const App = () => {
         setLivingLabs(responseLivingLabs.reverse())
         // responseLivingLabs.map((livingLab) => console.log(livingLab.acf))
     }
-
-    useEffect(() => {
-        fetchLivingLabs()
-    }, [])
 
     const fetchProjects = async () => {
         const response = await fetch(
@@ -54,6 +46,8 @@ const App = () => {
     }
 
     useEffect(() => {
+        fetchPosts()
+        fetchLivingLabs()
         fetchProjects()
     }, [])
 
