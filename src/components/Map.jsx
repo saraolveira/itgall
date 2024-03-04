@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 const Map = ({ livingLabs }) => {
     const customIcon = new Icon({
-        iconUrl: "/itgall-iso.svg",
+        iconUrl: "/itgall-iso-oscuro.svg",
         iconSize: [38, 38],
     })
     if (livingLabs.length === 0) return <></>

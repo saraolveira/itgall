@@ -12,14 +12,25 @@ const LivingLabs = ({ livingLabs }) => {
                 Discover all ITGALL Living Labs and collaborators around the
                 world!
             </p>
+
             <Map livingLabs={livingLabs} />
+            <div className="flex justify-end gap-4 bg-white p-2 rounded-b-3xl w-full h-10">
+                <div className="flex gap-1 font-semibold text-lila-900 text-sm italic">
+                    <img src="/itgall-iso-oscuro.svg" alt="" />{" "}
+                    <p>Living Labs</p>
+                </div>
+                <div className="flex gap-1 font-semibold text-lila-100 text-sm italic">
+                    <img src="/itgall-iso-claro.svg" alt="" />{" "}
+                    <p>Collaborators</p>
+                </div>
+            </div>
             <h2 className="mt-8 mb-8 font-extrabold text-4xl text-amarillo">
                 ITGALL Living Labs
             </h2>
             <p className="mb-8 font-semibold text-slate-50 text-xl">
                 *texto intro*
             </p>
-            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8 ">
+            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
                 {livingLabs.map((livingLab) => (
                     <LivingLab
                         key={livingLab.id}

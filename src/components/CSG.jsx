@@ -1,6 +1,6 @@
 const CSG = () => {
     return (
-        <div className="top-0 left-0 fixed w-screen h-svh pointer-events-none group">
+        <div className="top-0 left-0 z-50 fixed w-screen h-svh pointer-events-none group">
             <a
                 href="https://clustersaude.com/"
                 target="_blank"
