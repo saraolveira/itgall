@@ -19,7 +19,7 @@ const Projects = ({ projects }) => {
             </div>
 
             <h2 className="mt-20 mb-8 font-extrabold text-5xl text-amarillo">
-                ITGALL projects
+                ITGALL testings
             </h2>
         </div>
     )
