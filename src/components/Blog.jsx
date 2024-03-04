@@ -8,7 +8,9 @@ const Blog = ({ posts }) => {
             className="flex flex-col gap-8 bg-lila-400 p-8 lg:p-20 w-screen"
             id="news"
         >
-            <h2 className="font-extrabold text-5xl text-amarillo">News</h2>
+            <h2 className="font-extrabold text-5xl text-amarillo">
+                ITGALL News
+            </h2>
             <div className="flex lg:flex-row flex-col lg:justify-between gap-5 lg:gap-10 ">
                 {lastPosts.map((post) => (
                     <BlogPost

@@ -6,6 +6,8 @@ import ScrollToTop from "./components/ScrollToTop.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Home from "./pages/Home.jsx"
 import News from "./pages/News.jsx"
+import TestITGALL from "./pages/TestTGALL.jsx"
+import BePart from "./pages/BePart.jsx"
 import SinglePost from "./components/SinglePost.jsx"
 import LivingLabPage from "./components/LivingLabPage.jsx"
 import ProjectPage from "./components/ProjectPage.jsx"
@@ -65,6 +67,14 @@ const App = () => {
         {
             path: "/blog",
             element: <News posts={posts} />,
+        },
+        {
+            path: "/test",
+            element: <TestITGALL />,
+        },
+        {
+            path: "/be-part-itgall",
+            element: <BePart />,
         },
         {
             path: "/posts/:id",

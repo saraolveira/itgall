@@ -81,7 +81,7 @@ const Navbar = () => {
                         to="/"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
-                        Network
+                        ITGALL Network
                     </Link>
                     <Link
                         to="/"
@@ -129,7 +129,7 @@ const Navbar = () => {
                         <MenuItem
                             toggle={() => toggleOpen()}
                             path="/"
-                            text="Network"
+                            text="ITGALL Network"
                         />
                         <MenuItem
                             toggle={() => toggleOpen()}
@@ -149,7 +149,7 @@ const Navbar = () => {
                         <MenuOther
                             toggle={() => toggleOpen()}
                             path="/"
-                            text="Test in ITGALL"
+                            text="Test with ITGALL"
                         />
                         <MenuOther
                             toggle={() => toggleOpen()}
