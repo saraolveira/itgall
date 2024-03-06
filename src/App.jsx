@@ -15,6 +15,7 @@ import ProjectPage from "./components/ProjectPage.jsx"
 const App = () => {
     const [posts, setPosts] = useState([])
     const [livingLabs, setLivingLabs] = useState([])
+    const [colaboradores, setColaboradores] = useState([])
     const [projects, setProjects] = useState([])
 
     const fetchPosts = async () => {
@@ -35,6 +36,16 @@ const App = () => {
 
         setLivingLabs(responseLivingLabs.reverse())
         // responseLivingLabs.map((livingLab) => console.log(livingLab.acf))
+        // console.log(livingLabs)
+    }
+    const fetchColaboradores = async () => {
+        const response = await fetch(
+            "https://blog.itgall.tech/wp-json/wp/v2/colaborador?acf_format=standard&per_page=100"
+        )
+        const responseColaboradores = await response.json()
+
+        setColaboradores(responseColaboradores.reverse())
+        // console.log(colaboradores)
     }
 
     const fetchProjects = async () => {
@@ -50,6 +61,7 @@ const App = () => {
     useEffect(() => {
         fetchPosts()
         fetchLivingLabs()
+        fetchColaboradores()
         fetchProjects()
     }, [])
 
@@ -60,6 +72,7 @@ const App = () => {
                 <Home
                     posts={posts}
                     livingLabs={livingLabs}
+                    colaboradores={colaboradores}
                     projects={projects}
                 />
             ),

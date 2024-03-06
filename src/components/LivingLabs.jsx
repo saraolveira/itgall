@@ -2,7 +2,7 @@ import LivingLab from "./LivingLab.jsx"
 import { Link } from "react-router-dom"
 import Map from "./Map.jsx"
 
-const LivingLabs = ({ livingLabs }) => {
+const LivingLabs = ({ livingLabs, colaboradores }) => {
     return (
         <div className="bg-lila-400 p-8 lg:p-20 w-screen" id="livingLabs">
             <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
@@ -13,8 +13,8 @@ const LivingLabs = ({ livingLabs }) => {
                 world!
             </p>
 
-            <Map livingLabs={livingLabs} />
-            <div className="flex justify-end gap-4 bg-white p-2 rounded-b-3xl w-full h-10">
+            <Map livingLabs={livingLabs} colaboradores={colaboradores} />
+            <div className="flex justify-end gap-2 lg:gap-4 bg-white p-2 rounded-b-3xl w-full h-10">
                 <div className="flex gap-1 font-semibold text-lila-900 text-sm italic">
                     <img src="/itgall-iso-oscuro.svg" alt="" />{" "}
                     <p>Living Labs</p>
