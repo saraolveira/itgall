@@ -1,11 +1,15 @@
 import TeamMember from "./TeamMember.jsx"
 const Contact = () => {
     return (
-        <div className="bg-lila-900 p-8 lg:p-20 w-screen">
-            <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
+        <div className="relative bg-lila-900 p-8 lg:p-20 w-screen">
+            <img
+                src="itgall-iso-oscuro.svg"
+                className="top-40 -left-52 absolute opacity-40 w-screen lg:w-2/6 h-full animate-spin-slow"
+            />
+            <h2 className="relative z-20 mb-8 font-extrabold text-5xl text-amarillo">
                 Contact
             </h2>
-            <div className="lg:flex lg:flex-wrap lg:justify-evenly">
+            <div className="relative z-20 lg:flex lg:flex-wrap lg:justify-evenly">
                 <TeamMember
                     img="gisela.jpg"
                     nombre="Gisela García-Álvarez"

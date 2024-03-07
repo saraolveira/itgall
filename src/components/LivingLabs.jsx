@@ -1,4 +1,5 @@
 import LivingLab from "./LivingLab.jsx"
+import Colaborador from "./Colaborador.jsx"
 import { Link } from "react-router-dom"
 import Map from "./Map.jsx"
 
@@ -47,6 +48,15 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
             <p className="mb-8 font-semibold text-slate-50 text-xl">
                 *texto intro*
             </p>
+            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
+                {colaboradores.map((colaborador) => (
+                    <Colaborador
+                        key={colaborador.id}
+                        nombre={colaborador.acf.nombre}
+                        logo={colaborador.acf.logo.sizes.large}
+                    />
+                ))}
+            </div>
             <div className="flex justify-center mt-10 p-0">
                 <Link
                     to="/be-part-itgall"

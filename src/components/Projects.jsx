@@ -1,7 +1,11 @@
 import Project from "./Project.jsx"
 const Projects = ({ projects }) => {
     return (
-        <div className="bg-lila-900 p-8 lg:p-20 w-screen">
+        <div className="relative bg-white p-8 lg:p-20 w-screen">
+            <img
+                src="itgall-iso-claro.svg"
+                className="top-0 -right-52 absolute opacity-40 w-screen lg:w-2/6 h-full animate-spin-slow"
+            />
             <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
                 Collaborative projects
             </h2>

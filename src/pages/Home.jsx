@@ -12,9 +12,9 @@ const Home = ({ posts, livingLabs, projects, colaboradores }) => {
             <Hero />
             <Gradient direction={"bottom"} />
             <LivingLabs livingLabs={livingLabs} colaboradores={colaboradores} />
-            <Gradient direction={"top"} />
+            {/* <Gradient direction={"top"} /> */}
             <Projects projects={projects} />
-            <Gradient direction={"bottom"} />
+            {/* <Gradient direction={"bottom"} /> */}
             <Blog posts={posts} />
             <Gradient direction={"top"} />
             <Contact />

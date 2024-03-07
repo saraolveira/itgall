@@ -44,6 +44,7 @@ const Map = ({ livingLabs, colaboradores }) => {
                 <MarkerClusterGroup
                     chunkedLoading
                     iconCreateFunction={createCustomClusterIcon}
+                    maxClusterRadius={50}
                 >
                     {livingLabs.map((marker) => {
                         const lat = marker.acf.lat

@@ -108,7 +108,7 @@ const App = () => {
     if (!element) return null
 
     return (
-        <div className="font-body overflow-hidden">
+        <div className="font-body cursor-default overflow-hidden">
             <Navbar />
 
             <AnimatePresence mode="wait" initial={false}>
