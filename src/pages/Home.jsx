@@ -6,14 +6,14 @@ import Contact from "../components/Contact.jsx"
 import PageTransition from "../components/PageTransition.jsx"
 import Gradient from "../components/Gradient.jsx"
 
-const Home = ({ posts, livingLabs, projects, colaboradores }) => {
+const Home = ({ posts, livingLabs, projects, colaboradores, testeos }) => {
     return (
         <>
             <Hero />
             <Gradient direction={"bottom"} />
             <LivingLabs livingLabs={livingLabs} colaboradores={colaboradores} />
             {/* <Gradient direction={"top"} /> */}
-            <Projects projects={projects} />
+            <Projects projects={projects} testeos={testeos} />
             {/* <Gradient direction={"bottom"} /> */}
             <Blog posts={posts} />
             <Gradient direction={"top"} />

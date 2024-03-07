@@ -87,7 +87,7 @@ const Navbar = () => {
                         to="/"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
-                        Projects
+                        Projects & Testings
                     </Link>
                     <Link
                         to="/"
@@ -134,7 +134,7 @@ const Navbar = () => {
                         <MenuItem
                             toggle={() => toggleOpen()}
                             path="/"
-                            text="Projects"
+                            text="Projects & Testings"
                         />
                         <MenuItem
                             toggle={() => toggleOpen()}

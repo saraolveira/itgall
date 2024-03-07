@@ -15,15 +15,9 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
             </p>
 
             <Map livingLabs={livingLabs} colaboradores={colaboradores} />
-            <div className="flex justify-end gap-2 lg:gap-4 bg-white p-2 rounded-b-3xl w-full h-10">
-                <div className="flex gap-1 font-semibold text-lila-900 text-sm italic">
-                    <img src="/itgall-iso-oscuro.svg" alt="" />{" "}
-                    <p>Living Labs</p>
-                </div>
-                <div className="flex gap-1 font-semibold text-lila-100 text-sm italic">
-                    <img src="/itgall-iso-claro.svg" alt="" />{" "}
-                    <p>Collaborators</p>
-                </div>
+            <div className="flex justify-end gap-2 lg:gap-4 bg-white p-2 rounded-b-3xl w-full h-10 font-semibold text-lila-900 text-sm italic">
+                <img src="/itgall-iso-oscuro.svg" alt="" /> <p>Living Labs</p>
+                <img src="/itgall-iso-claro.svg" alt="" /> <p>Collaborators</p>
             </div>
             <h2 className="mt-8 mb-8 font-extrabold text-4xl text-amarillo">
                 ITGALL Living Labs

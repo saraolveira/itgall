@@ -17,6 +17,7 @@ const App = () => {
     const [livingLabs, setLivingLabs] = useState([])
     const [colaboradores, setColaboradores] = useState([])
     const [projects, setProjects] = useState([])
+    const [testeos, setTesteos] = useState([])
 
     const fetchPosts = async () => {
         const response = await fetch(
@@ -38,6 +39,7 @@ const App = () => {
         // responseLivingLabs.map((livingLab) => console.log(livingLab.acf))
         // console.log(livingLabs)
     }
+
     const fetchColaboradores = async () => {
         const response = await fetch(
             "https://blog.itgall.tech/wp-json/wp/v2/colaborador?acf_format=standard&per_page=100"
@@ -58,11 +60,22 @@ const App = () => {
         // console.log(projects)
     }
 
+    const fetchTesteos = async () => {
+        const response = await fetch(
+            "https://blog.itgall.tech/wp-json/wp/v2/testeo?acf_format=standard&per_page=100"
+        )
+        const responseTesteos = await response.json()
+
+        setTesteos(responseTesteos)
+        // console.log(projects)
+    }
+
     useEffect(() => {
         fetchPosts()
         fetchLivingLabs()
         fetchColaboradores()
         fetchProjects()
+        fetchTesteos()
     }, [])
 
     const element = useRoutes([
@@ -74,6 +87,7 @@ const App = () => {
                     livingLabs={livingLabs}
                     colaboradores={colaboradores}
                     projects={projects}
+                    testeos={testeos}
                 />
             ),
         },
