@@ -21,10 +21,10 @@ const Hero = () => {
                 </div>
                 <div className="z-20 flex justify-center text-center lg:text-xl">
                     <p className="w-11/12 lg:w-3/4 font-semibold">
-                        ITGALL is a Living lab network managed by CSG spread
-                        along all the Galicia geography, combining capabilities
-                        for testing solutions within the healthcare, social care
-                        and onehealth sectors
+                        ITGALL is a Living lab network managed by CSG spread all
+                        along, specially in Galicia, combining capabilities for
+                        testing solutions within the healthcare, social care and
+                        onehealth sectors
                     </p>
                 </div>
 
@@ -34,6 +34,14 @@ const Hero = () => {
                 >
                     Test with ITGALL
                 </Link>
+                <img
+                    src="/recurso-1.png"
+                    className="-right-24 lg:-right-8 -bottom-8 lg:-bottom-20 z-10 absolute w-48 lg:w-96"
+                />
+                <img
+                    src="/recurso-7.png"
+                    className="-bottom-6 lg:-bottom-10 -left-16 lg:-left-8 z-10 absolute w-40 lg:w-72"
+                />
             </div>
             <CSG />
         </div>

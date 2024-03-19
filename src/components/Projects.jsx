@@ -26,15 +26,24 @@ const Projects = ({ projects, testeos }) => {
             <h2 className="mt-20 mb-8 font-extrabold text-5xl text-amarillo">
                 ITGALL testings
             </h2>
-            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
+            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8 pb-20 lg:pb-0 text-lila-900">
                 {testeos.map((testeo) => (
                     <Testeo
                         key={testeo.id}
+                        slug={testeo.slug}
                         nombre={testeo.acf.nombre}
                         logo={testeo.acf.logo.sizes.large}
                     />
                 ))}
             </div>
+            <img
+                src="/recurso-4.png"
+                className="-right-10 lg:right-10 bottom-0 z-10 absolute w-48 lg:w-96"
+            />
+            <img
+                src="/recurso-5.png"
+                className="right-56 lg:right-72 bottom-0 z-10 absolute w-48 lg:w-96"
+            />
         </div>
     )
 }

@@ -11,6 +11,8 @@ import BePart from "./pages/BePart.jsx"
 import SinglePost from "./components/SinglePost.jsx"
 import LivingLabPage from "./components/LivingLabPage.jsx"
 import ProjectPage from "./components/ProjectPage.jsx"
+import TesteoPage from "./components/TesteoPage.jsx"
+import ColaboradorPage from "./components/ColaboradorPage.jsx"
 
 const App = () => {
     const [posts, setPosts] = useState([])
@@ -66,7 +68,7 @@ const App = () => {
         )
         const responseTesteos = await response.json()
 
-        setTesteos(responseTesteos)
+        setTesteos(responseTesteos.reverse())
         // console.log(projects)
     }
 
@@ -109,11 +111,21 @@ const App = () => {
         },
         {
             path: "/living-lab/:id",
-            element: <LivingLabPage livingLabs={livingLabs} />,
+            element: (
+                <LivingLabPage livingLabs={livingLabs} testeos={testeos} />
+            ),
         },
         {
             path: "/project/:id",
             element: <ProjectPage projects={projects} />,
+        },
+        {
+            path: "/testing/:id",
+            element: <TesteoPage testeos={testeos} livingLabs={livingLabs} />,
+        },
+        {
+            path: "/collaborators/:id",
+            element: <ColaboradorPage colaboradores={colaboradores} />,
         },
     ])
 

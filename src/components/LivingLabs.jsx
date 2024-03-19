@@ -11,7 +11,8 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
             </h2>
             <p className="mb-8 font-semibold text-slate-50 text-xl">
                 Discover all ITGALL Living Labs and collaborators around the
-                world!
+                world! The ITGALL Network stimulates co-creation, design and
+                collaboration among all stakeholders of the care ecosystem.
             </p>
 
             <Map livingLabs={livingLabs} colaboradores={colaboradores} />
@@ -23,7 +24,11 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
                 ITGALL Living Labs
             </h2>
             <p className="mb-8 font-semibold text-slate-50 text-xl">
-                *texto intro*
+                Open innovation enviroments/platforms where technological
+                solutions are tested and developed in real usage situations.
+                This allows for collaboration between companies, institutions,
+                end-users and toher interested agents to develop, validate and
+                text new technologies, products and services.
             </p>
             <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
                 {livingLabs.map((livingLab) => (
@@ -40,12 +45,15 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
                 ITGALL Collaborators
             </h2>
             <p className="mb-8 font-semibold text-slate-50 text-xl">
-                *texto intro*
+                They support different parts of the testing process like
+                consulting, data processing, business intelligence (market
+                analysis), etc.
             </p>
             <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
                 {colaboradores.map((colaborador) => (
                     <Colaborador
                         key={colaborador.id}
+                        slug={colaborador.slug}
                         nombre={colaborador.acf.nombre}
                         logo={colaborador.acf.logo.sizes.large}
                     />
