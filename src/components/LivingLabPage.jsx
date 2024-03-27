@@ -11,6 +11,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
     const { id } = useParams()
     const [livingLab, setLivingLab] = useState()
     const [testeosFinal, setTesteosFinal] = useState([])
+    const [testeosShow, setTesteosShow] = useState(false)
 
     const livingLabIcon = new Icon({
         iconUrl: "/itgall-iso-oscuro.svg",
@@ -29,13 +30,17 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
             (livingLab) => livingLab.slug === id
         )
         setLivingLab(livingLabFinal[0])
-        const testeosLL = livingLabFinal[0].acf.testeos
+    }
+
+    const chooseTesteo = async () => {
+        const testeosLL = livingLab.acf.testeos
         for (let testeo of testeos) {
             if (
                 testeosLL.includes(testeo.acf.nombre) &&
-                testeosFinal.length < testeos.length
+                testeosFinal.includes(testeo) === false
             ) {
                 testeosFinal.push(testeo)
+                setTesteosShow(true)
             }
         }
     }
@@ -43,6 +48,10 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
     useEffect(() => {
         chooseLivingLab()
     })
+
+    useEffect(() => {
+        chooseTesteo()
+    }, [livingLab])
 
     if (!livingLab) return <div></div>
 
@@ -52,7 +61,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                 <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
                     {livingLab.acf.nombre}
                 </h2>
-                <div className="lg:flex lg:gap-10">
+                <div className="flex lg:flex-row flex-col gap-10">
                     <div className="bg-white drop-shadow-md p-4 lg:p-6 rounded-3xl lg:w-4/5">
                         <p
                             className="text-center lg:text-justify"
@@ -79,20 +88,22 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                     </div>
                 </div>
                 <div className="lg:flex lg:gap-10">
-                    <div className="lg:w-1/2">
-                        <h3 className="mt-8 mb-8 font-extrabold text-3xl text-amarillo">
-                            Testings
-                        </h3>
-                        <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8 pb-20 lg:pb-0 text-white">
-                            {testeosFinal.map((testeo) => (
-                                <Testeo
-                                    key={testeo.id}
-                                    nombre={testeo.acf.nombre}
-                                    logo={testeo.acf.logo.sizes.large}
-                                />
-                            ))}
+                    {testeosShow && (
+                        <div className="lg:w-1/2">
+                            <h3 className="mt-8 mb-8 font-extrabold text-3xl text-amarillo">
+                                Testings
+                            </h3>
+                            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8 pb-20 lg:pb-0 text-white">
+                                {testeosFinal.map((testeo) => (
+                                    <Testeo
+                                        key={testeo.id}
+                                        nombre={testeo.acf.nombre}
+                                        logo={testeo.acf.logo.sizes.large}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    )}
                     <div className="lg:w-1/2">
                         <h3 className="mt-8 mb-8 font-extrabold text-3xl text-amarillo">
                             Locations
@@ -124,7 +135,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                                             livingLab.acf.log2,
                                         ]}
                                         icon={livingLabIcon}
-                                        key={livingLab.id}
+                                        key={livingLab.lat2}
                                     >
                                         <Popup>{livingLab.acf.nombre}</Popup>
                                     </Marker>
@@ -136,7 +147,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                                             livingLab.acf.log3,
                                         ]}
                                         icon={livingLabIcon}
-                                        key={livingLab.id}
+                                        key={livingLab.lat3}
                                     >
                                         <Popup>{livingLab.acf.nombre}</Popup>
                                     </Marker>
@@ -148,7 +159,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                                             livingLab.acf.log4,
                                         ]}
                                         icon={livingLabIcon}
-                                        key={livingLab.id}
+                                        key={livingLab.lat4}
                                     >
                                         <Popup>{livingLab.acf.nombre}</Popup>
                                     </Marker>
@@ -160,7 +171,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                                             livingLab.acf.log5,
                                         ]}
                                         icon={livingLabIcon}
-                                        key={livingLab.id}
+                                        key={livingLab.lat5}
                                     >
                                         <Popup>{livingLab.acf.nombre}</Popup>
                                     </Marker>
@@ -172,7 +183,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                                             livingLab.acf.log6,
                                         ]}
                                         icon={livingLabIcon}
-                                        key={livingLab.id}
+                                        key={livingLab.lat6}
                                     >
                                         <Popup>{livingLab.acf.nombre}</Popup>
                                     </Marker>

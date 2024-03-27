@@ -45,7 +45,7 @@ const Navbar = () => {
 
     return (
         <header>
-            <nav className="relative z-20 flex justify-between items-center p-3.5 lg:p-8 xl:p-12 h-20 font-body font-bold text-l text-lila-900 xl:text-xl">
+            <nav className="relative z-20 flex justify-between items-center bg-white p-3.5 lg:p-8 xl:p-12 w-full h-20 font-body font-bold text-l text-lila-900 xl:text-xl">
                 <div className="flex gap-3 md:gap-4 lg:gap-6">
                     <Link to="/">
                         <motion.div
@@ -78,13 +78,13 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
-                        to="/"
+                        to="/#livingLabs"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         ITGALL Network
                     </Link>
                     <Link
-                        to="/"
+                        to="/#projects"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         Projects & Testings

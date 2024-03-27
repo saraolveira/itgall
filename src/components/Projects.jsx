@@ -2,7 +2,7 @@ import Project from "./Project.jsx"
 import Testeo from "./Testeo.jsx"
 const Projects = ({ projects, testeos }) => {
     return (
-        <div className="relative bg-white p-8 lg:p-20 w-screen">
+        <div className="relative bg-white p-8 lg:p-20 w-screen" id="projects">
             <img
                 src="itgall-iso-claro.svg"
                 className="top-0 -right-52 absolute opacity-40 w-screen lg:w-2/6 h-full animate-spin-slow"
