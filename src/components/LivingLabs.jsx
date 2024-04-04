@@ -27,8 +27,8 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
                 Open innovation enviroments/platforms where technological
                 solutions are tested and developed in real usage situations.
                 This allows for collaboration between companies, institutions,
-                end-users and toher interested agents to develop, validate and
-                text new technologies, products and services.
+                end-users and other interested agents to develop, validate and
+                test new technologies, products and services.
             </p>
             <div className="flex flex-wrap justify-between gap-8 lg:gap-14 lg:grid lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 lg:auto-cols-max mt-8">
                 {livingLabs.map((livingLab) => (

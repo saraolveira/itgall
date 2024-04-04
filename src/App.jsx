@@ -17,6 +17,8 @@ import LivingLabPage from "./components/LivingLabPage.jsx"
 import ProjectPage from "./components/ProjectPage.jsx"
 import TesteoPage from "./components/TesteoPage.jsx"
 import ColaboradorPage from "./components/ColaboradorPage.jsx"
+import LegalNotice from "./pages/LegalNotice.jsx"
+import PrivacyCookies from "./pages/PrivacyCookies.jsx"
 
 const App = () => {
     const [posts, setPosts] = useState([])
@@ -147,6 +149,14 @@ const App = () => {
         {
             path: "/collaborators/:id",
             element: <ColaboradorPage colaboradores={colaboradores} />,
+        },
+        {
+            path: "/legal-notice",
+            element: <LegalNotice />,
+        },
+        {
+            path: "/privacy-cookies",
+            element: <PrivacyCookies />,
         },
     ])
 

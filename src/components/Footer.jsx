@@ -18,13 +18,19 @@ const Footer = () => {
             <div className="bg-lila-400 w-1 h-28" />
             <div>
                 <p>
-                    <Link className="text-lila-400 hover:text-lila-900 transition-all duration-300">
+                    <Link
+                        to="/privacy-cookies"
+                        className="text-lila-400 hover:text-lila-900 transition-all duration-300"
+                    >
                         Privacy and cookie policies
                     </Link>
                 </p>
                 <p>
-                    <Link className="text-lila-400 hover:text-lila-900 transition-all duration-300">
-                        Legal notices
+                    <Link
+                        to="/legal-notice"
+                        className="text-lila-400 hover:text-lila-900 transition-all duration-300"
+                    >
+                        Legal notice
                     </Link>
                 </p>
             </div>
