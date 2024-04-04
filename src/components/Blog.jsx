@@ -11,7 +11,7 @@ const Blog = ({ posts }) => {
             <h2 className="font-extrabold text-5xl text-amarillo">
                 ITGALL News
             </h2>
-            <div className="flex flex-col gap-5 lg:gap-10 lg:grid lg:grid-cols-4 lg:auto-cols-max">
+            <div className="flex flex-col gap-5 lg:gap-10 lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:auto-cols-max">
                 {lastPosts.map((post) => (
                     <BlogPost
                         key={post.id}

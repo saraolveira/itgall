@@ -4,6 +4,7 @@ import { useLocation, useRoutes } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 import ScrollToTop from "./components/ScrollToTop.jsx"
 import Navbar from "./components/Navbar.jsx"
+import Footer from "./components/Footer.jsx"
 import Home from "./pages/Home.jsx"
 import Network from "./pages/Network.jsx"
 import ProjectsTestings from "./pages/ProjectsTestings.jsx"
@@ -161,6 +162,7 @@ const App = () => {
                 {React.cloneElement(element, { key: location.pathname })}
                 <ScrollToTop />
             </AnimatePresence>
+            <Footer />
         </div>
     )
 }

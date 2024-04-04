@@ -1,8 +1,12 @@
 const TeamMember = ({ img, nombre, mail, cargo }) => {
     const link = `mailto:${mail}`
     return (
-        <div className="flex items-center gap-2 lg:gap-4 bg-white mt-4 px-4 py-2 rounded-full">
-            <img src={img} alt={nombre} className="rounded-full w-20 lg:w-36" />
+        <div className="flex items-center gap-2 lg:gap-4 bg-white mt-4 px-2 lg:px-4 py-2 rounded-full">
+            <img
+                src={img}
+                alt={nombre}
+                className="rounded-full w-20 lg:w-24 2xl:w-28"
+            />
             <div>
                 <p className="font-bold text-lila-900 lg:text-2xl">{nombre}</p>
                 <p className="font-bold text-lila-900 text-xs lg:text-base italic">

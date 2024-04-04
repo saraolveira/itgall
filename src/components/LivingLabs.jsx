@@ -9,7 +9,7 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
             <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
                 ITGALL Network
             </h2>
-            <p className="mb-8 font-semibold text-slate-50 text-xl">
+            <p className="mb-8 font-semibold text-slate-50 text-sm lg:text-xl">
                 Discover all ITGALL Living Labs and collaborators around the
                 world! The ITGALL Network stimulates co-creation, design and
                 collaboration among all stakeholders of the care ecosystem.
@@ -23,14 +23,14 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
             <h2 className="mt-8 mb-8 font-extrabold text-4xl text-amarillo">
                 ITGALL Living Labs
             </h2>
-            <p className="mb-8 font-semibold text-slate-50 text-xl">
+            <p className="mb-8 font-semibold text-slate-50 text-sm lg:text-xl">
                 Open innovation enviroments/platforms where technological
                 solutions are tested and developed in real usage situations.
                 This allows for collaboration between companies, institutions,
                 end-users and toher interested agents to develop, validate and
                 text new technologies, products and services.
             </p>
-            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
+            <div className="flex flex-wrap justify-between gap-8 lg:gap-14 lg:grid lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 lg:auto-cols-max mt-8">
                 {livingLabs.map((livingLab) => (
                     <LivingLab
                         key={livingLab.id}
@@ -44,12 +44,12 @@ const LivingLabs = ({ livingLabs, colaboradores }) => {
             <h2 className="mt-12 mb-8 font-extrabold text-4xl text-amarillo">
                 ITGALL Collaborators
             </h2>
-            <p className="mb-8 font-semibold text-slate-50 text-xl">
+            <p className="mb-8 font-semibold text-slate-50 text-sm lg:text-xl">
                 They support different parts of the testing process like
                 consulting, data processing, business intelligence (market
                 analysis), etc.
             </p>
-            <div className="flex flex-wrap justify-between lg:justify-start gap-8 lg:gap-14 mt-8">
+            <div className="flex flex-wrap justify-between gap-8 lg:gap-14 lg:grid lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 lg:auto-cols-max mt-8">
                 {colaboradores.map((colaborador) => (
                     <Colaborador
                         key={colaborador.id}
