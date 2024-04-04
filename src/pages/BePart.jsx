@@ -1,30 +1,62 @@
+import React, { useRef } from "react"
+import emailjs from "@emailjs/browser"
 import PageTransition from "../components/PageTransition.jsx"
 
 const BePart = () => {
+    const form = useRef()
+
+    const sendEmail = (e) => {
+        e.preventDefault()
+
+        emailjs
+            .sendForm("service_lkto7l6", "template_p3vyryl", form.current, {
+                publicKey: "ucbT4sF437tCek50t",
+            })
+            .then(
+                () => {
+                    console.log("SUCCESS!")
+                },
+                (error) => {
+                    console.log("FAILED...", error.text)
+                }
+            )
+    }
     return (
         <div className="bg-lila-900 p-8 lg:p-20 w-full min-h-[calc(100svh-5rem)]">
             <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
                 Be part of the ITGALL Network
             </h2>
-            <p className="mb-8 font-semibold text-slate-50 text-xl">*texto*</p>
+            <p className="mb-8 font-semibold text-slate-50 text-xl">
+                Join the ITGALL Network of Living Labs! The ITGALL Network
+                stimulates co-creation, design and collaboration among all
+                stakeholders of the care ecosystem.
+            </p>
             <PageTransition />
             <div>
-                <form className="flex flex-col gap-4">
+                <form
+                    className="flex flex-col gap-4"
+                    ref={form}
+                    onSubmit={sendEmail}
+                >
                     <label>
                         <p className="text-lg text-slate-50">Entity name</p>
                         <input
                             type="text"
                             name="entityName"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
-                        <p className="text-lg text-slate-50">Logo</p>
+                        <p className="text-lg text-slate-50">
+                            Logo (provide a downlable link to Drive, WeTransfer,
+                            etc., with color and negative/white version)
+                        </p>
                         <input
-                            type="file"
+                            type="url"
                             name="logo"
-                            className="border-0 shadow-sm p-2 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 bg-white"
-                            multiple
+                            className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -35,6 +67,7 @@ const BePart = () => {
                             name="description"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -47,6 +80,7 @@ const BePart = () => {
                             name="why"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -54,9 +88,10 @@ const BePart = () => {
                             Does your entity have a Living Lab in operation?
                         </p>
                         <textarea
-                            name="why"
+                            name="operation"
                             rows="2"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -148,6 +183,18 @@ const BePart = () => {
 
                     <label>
                         <p className="text-lg text-slate-50">
+                            If you selected "Others" in the previous question,
+                            indicate them here:
+                        </p>
+                        <input
+                            type="text"
+                            name="othersChosen"
+                            className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                        />
+                    </label>
+
+                    <label>
+                        <p className="text-lg text-slate-50">
                             Can you adapt an area of ​​your center where you can
                             carry out product testing?
                         </p>
@@ -155,6 +202,7 @@ const BePart = () => {
                             name="area"
                             rows="2"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -165,6 +213,7 @@ const BePart = () => {
                             type="text"
                             name="meters"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
 
@@ -209,6 +258,7 @@ const BePart = () => {
                             name="service"
                             rows="2"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -220,6 +270,7 @@ const BePart = () => {
                             name="users"
                             rows="2"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -231,6 +282,7 @@ const BePart = () => {
                             name="differentialValue"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -239,6 +291,7 @@ const BePart = () => {
                             type="text"
                             name="contactPerson"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -247,6 +300,7 @@ const BePart = () => {
                             type="email"
                             name="contactEmail"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -255,17 +309,20 @@ const BePart = () => {
                             type="url"
                             name="website"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Corporate video of the Living Lab
+                            Corporate video of the Living Lab (provide a
+                            downlable link: WeTransfer, Drive, etc.)
                         </p>
                         <input
-                            type="file"
+                            type="url"
                             name="video"
-                            className="border-0 shadow-sm p-2 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 bg-white"
+                            className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
 
@@ -278,6 +335,7 @@ const BePart = () => {
                             name="humanResources"
                             rows="4"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -291,6 +349,7 @@ const BePart = () => {
                             name="protocol"
                             rows="4"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -302,6 +361,7 @@ const BePart = () => {
                             name="collaborations"
                             rows="4"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -314,6 +374,7 @@ const BePart = () => {
                             name="costs"
                             rows="2"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -325,6 +386,7 @@ const BePart = () => {
                             name="previousTestings"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 

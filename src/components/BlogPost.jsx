@@ -11,7 +11,7 @@ const BlogPost = ({ title, slug, excerpt, img }) => {
                 <h2 className="group-hover:text-lila-400 mt-36 font-extrabold text-lila-900 text-xl transition duration-300">
                     {title}
                 </h2>
-                <div
+                <p
                     className="group-hover:text-lila-900 mt-4 text-sm transition-all duration-300"
                     dangerouslySetInnerHTML={{ __html: excerpt }}
                 />

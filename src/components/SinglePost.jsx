@@ -28,7 +28,7 @@ const SinglePost = ({ posts }) => {
                 {post.title.rendered}
             </h2>
             <div
-                className="bg-slate-50 mt-8 p-8 rounded-3xl"
+                className="bg-slate-50 mt-8 p-8 rounded-3xl rendered-content"
                 dangerouslySetInnerHTML={{ __html: post.content.rendered }}
             />
             <PageTransition />

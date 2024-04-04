@@ -5,6 +5,9 @@ import { AnimatePresence } from "framer-motion"
 import ScrollToTop from "./components/ScrollToTop.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Home from "./pages/Home.jsx"
+import Network from "./pages/Network.jsx"
+import ProjectsTestings from "./pages/ProjectsTestings.jsx"
+import ContactPage from "./pages/ContactPage.jsx"
 import News from "./pages/News.jsx"
 import TestITGALL from "./pages/TestTGALL.jsx"
 import BePart from "./pages/BePart.jsx"
@@ -94,8 +97,25 @@ const App = () => {
             ),
         },
         {
+            path: "/network",
+            element: (
+                <Network
+                    livingLabs={livingLabs}
+                    colaboradores={colaboradores}
+                />
+            ),
+        },
+        {
+            path: "/projects-testings",
+            element: <ProjectsTestings projects={projects} testeos={testeos} />,
+        },
+        {
             path: "/blog",
             element: <News posts={posts} />,
+        },
+        {
+            path: "/contact",
+            element: <ContactPage />,
         },
         {
             path: "/test",

@@ -1,6 +1,26 @@
+import React, { useRef } from "react"
+import emailjs from "@emailjs/browser"
 import PageTransition from "../components/PageTransition.jsx"
 
 const TestITGALL = () => {
+    const form = useRef()
+
+    const sendEmail = (e) => {
+        e.preventDefault()
+
+        emailjs
+            .sendForm("service_lkto7l6", "template_bmit3c4", form.current, {
+                publicKey: "ucbT4sF437tCek50t",
+            })
+            .then(
+                () => {
+                    console.log("SUCCESS!")
+                },
+                (error) => {
+                    console.log("FAILED...", error.text)
+                }
+            )
+    }
     return (
         <div className="bg-lila-900 p-8 lg:p-20 w-full min-h-[calc(100svh-5rem)]">
             <h2 className="mb-8 font-extrabold text-5xl text-amarillo">
@@ -14,13 +34,18 @@ const TestITGALL = () => {
             </p>
             <PageTransition />
             <div>
-                <form className="flex flex-col gap-4">
+                <form
+                    className="flex flex-col gap-4"
+                    ref={form}
+                    onSubmit={sendEmail}
+                >
                     <label>
                         <p className="text-lg text-slate-50">Project name</p>
                         <input
                             type="text"
                             name="projectName"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -29,6 +54,7 @@ const TestITGALL = () => {
                             type="text"
                             name="entityName"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -37,6 +63,7 @@ const TestITGALL = () => {
                             type="text"
                             name="contactPerson"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -45,6 +72,7 @@ const TestITGALL = () => {
                             type="email"
                             name="contactEmail"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
                     <label>
@@ -63,6 +91,7 @@ const TestITGALL = () => {
                             name="description"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -74,6 +103,7 @@ const TestITGALL = () => {
                             name="productServiceInformation"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -84,6 +114,7 @@ const TestITGALL = () => {
                             name="differentialValue"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
                     <label>
@@ -94,6 +125,7 @@ const TestITGALL = () => {
                             type="text"
                             name="budget"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
+                            required
                         />
                     </label>
 
@@ -106,6 +138,7 @@ const TestITGALL = () => {
                             name="servicesRequired"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 
@@ -117,6 +150,7 @@ const TestITGALL = () => {
                             name="relationProjectsFunding"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
+                            required
                         />
                     </label>
 

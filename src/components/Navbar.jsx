@@ -78,25 +78,25 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
-                        to="/#livingLabs"
+                        to="/network"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         ITGALL Network
                     </Link>
                     <Link
-                        to="/#projects"
+                        to="/projects-testings"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         Projects & Testings
                     </Link>
                     <Link
-                        to="/"
+                        to="/blog"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         News
                     </Link>
                     <Link
-                        to="/"
+                        to="/contact"
                         className="hover:text-amarillo transition-colors duration-300"
                     >
                         Contact
@@ -128,32 +128,32 @@ const Navbar = () => {
                         />
                         <MenuItem
                             toggle={() => toggleOpen()}
-                            path="/"
+                            path="/network"
                             text="ITGALL Network"
                         />
                         <MenuItem
                             toggle={() => toggleOpen()}
-                            path="/"
+                            path="/projects-testings"
                             text="Projects & Testings"
                         />
                         <MenuItem
                             toggle={() => toggleOpen()}
-                            path="/"
+                            path="/blog"
                             text="News"
                         />
                         <MenuItem
                             toggle={() => toggleOpen()}
-                            path="/"
+                            path="/contact"
                             text="Contact"
                         />
                         <MenuOther
                             toggle={() => toggleOpen()}
-                            path="/"
+                            path="/test"
                             text="Test with ITGALL"
                         />
                         <MenuOther
                             toggle={() => toggleOpen()}
-                            path="/"
+                            path="/be-part-itgall"
                             text="Be part of the ITGALL network"
                         />
                     </motion.div>

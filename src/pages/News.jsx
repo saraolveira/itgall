@@ -8,7 +8,7 @@ const News = ({ posts }) => {
                 className="bg-lila-900 p-8 lg:p-20 w-screen min-h-svh"
                 id="news"
             >
-                <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between gap-5 lg:gap-0 ">
+                <div className="flex flex-col flex-wrap lg:gap-10 lg:grid lg:grid-cols-4 lg:auto-cols-max">
                     {posts.map((post) => (
                         <BlogPost
                             key={post.id}

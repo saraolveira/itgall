@@ -64,7 +64,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                 <div className="flex lg:flex-row flex-col gap-10">
                     <div className="bg-white drop-shadow-md p-4 lg:p-6 rounded-3xl lg:w-4/5">
                         <p
-                            className="text-center lg:text-justify"
+                            className="text-center lg:text-justify ll-description"
                             dangerouslySetInnerHTML={{
                                 __html: livingLab.acf.descripcion,
                             }}
