@@ -97,6 +97,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                                 {testeosFinal.map((testeo) => (
                                     <Testeo
                                         key={testeo.id}
+                                        slug={testeo.slug}
                                         nombre={testeo.acf.nombre}
                                         logo={testeo.acf.logo.sizes.large}
                                     />
