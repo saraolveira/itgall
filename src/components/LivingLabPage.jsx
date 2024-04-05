@@ -193,11 +193,11 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
                         </MapContainer>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <h3 className="mt-8 mb-8 font-extrabold text-3xl text-amarillo">
                         News
                     </h3>
-                </div>
+                </div> */}
             </div>
 
             <PageTransition />
