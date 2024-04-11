@@ -16,6 +16,12 @@ const Contact = () => {
                     mail="gerencia@clustersaude.com"
                     cargo="Managing Director"
                 />
+                {/* <TeamMember
+                    img="ivan.jpg"
+                    nombre="Iván Rarís Filgueira"
+                    mail="gerencia@clustersaude.com"
+                    cargo="Managing Director"
+                /> */}
                 <TeamMember
                     img="nieves.jpg"
                     nombre="Nieves Freire Barea"
@@ -37,6 +43,12 @@ const Contact = () => {
                 <TeamMember
                     img="angeles.png"
                     nombre="Ángeles Lobato Limeres"
+                    mail="admin@clustersaude.com"
+                    cargo="Administration"
+                />
+                <TeamMember
+                    img="belen.jpg"
+                    nombre="Belén Taboas Pometti"
                     mail="admin@clustersaude.com"
                     cargo="Administration"
                 />

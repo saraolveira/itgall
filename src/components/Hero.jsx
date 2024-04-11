@@ -36,7 +36,7 @@ const Hero = () => {
                 </Link>
                 <img
                     src="/recurso-1.png"
-                    className="-right-24 lg:-right-8 -bottom-8 lg:-bottom-20 z-10 absolute w-48 lg:w-96"
+                    className="-right-24 lg:-right-22 -bottom-8 lg:-bottom-20 z-10 absolute w-48 lg:w-96"
                 />
                 <img
                     src="/recurso-7.png"

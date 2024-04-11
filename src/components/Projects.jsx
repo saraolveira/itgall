@@ -29,7 +29,7 @@ const Projects = ({ projects, testeos }) => {
             <h2 className="mt-20 mb-8 font-extrabold text-5xl text-amarillo">
                 ITGALL testings
             </h2>
-            <div className="flex flex-wrap justify-between gap-8 lg:gap-14 lg:grid lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 lg:auto-cols-max mt-8 pb-20 lg:pb-0 text-lila-900">
+            <div className="flex flex-wrap justify-between gap-8 lg:gap-14 lg:grid lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 lg:auto-cols-max mt-8 pb-20 lg:pb-32 text-lila-900">
                 {testeos.map((testeo) => (
                     <Testeo
                         key={testeo.id}
