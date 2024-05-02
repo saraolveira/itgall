@@ -7,6 +7,7 @@ import PageTransition from "../components/PageTransition.jsx"
 import Gradient from "../components/Gradient.jsx"
 
 const Home = ({ posts, livingLabs, projects, colaboradores, testeos }) => {
+    document.title = "ITGALL"
     return (
         <>
             <Hero />

@@ -12,6 +12,7 @@ const TesteoPage = ({ testeos, livingLabs }) => {
     const chooseTesteo = async () => {
         const testeoFinal = testeos.filter((testeo) => testeo.slug === id)
         setTesteo(testeoFinal[0])
+        document.title = testeoFinal[0].acf.nombre
     }
 
     const chooseLivingLabs = async () => {

@@ -2,6 +2,7 @@ import PageTransition from "../components/PageTransition.jsx"
 import BlogPost from "../components/BlogPost.jsx"
 
 const News = ({ posts }) => {
+    document.title = "News - ITGALL"
     return (
         <>
             <div

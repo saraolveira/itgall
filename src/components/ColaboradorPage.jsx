@@ -11,6 +11,7 @@ const ColaboradorPage = ({ colaboradores }) => {
             (colaborador) => colaborador.slug === id
         )
         setColaborador(colaboradorFinal[0])
+        document.title = colaboradorFinal[0].acf.nombre
     }
 
     useEffect(() => {

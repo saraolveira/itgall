@@ -30,6 +30,7 @@ const LivingLabPage = ({ livingLabs, testeos }) => {
             (livingLab) => livingLab.slug === id
         )
         setLivingLab(livingLabFinal[0])
+        document.title = livingLabFinal[0].acf.nombre
     }
 
     const chooseTesteo = async () => {

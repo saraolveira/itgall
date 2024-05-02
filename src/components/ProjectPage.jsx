@@ -9,7 +9,7 @@ const ProjectPage = ({ projects }) => {
     const chooseProject = async () => {
         const projectFinal = projects.filter((project) => project.slug === id)
         setProject(projectFinal[0])
-        console.log(projectFinal[0])
+        document.title = projectFinal[0].acf.proyecto
     }
 
     useEffect(() => {

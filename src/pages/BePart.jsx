@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser"
 import PageTransition from "../components/PageTransition.jsx"
 
 const BePart = () => {
+    document.title = "Be part of the ITGALL Network"
     const form = useRef()
 
     const sendEmail = (e) => {
@@ -14,7 +15,7 @@ const BePart = () => {
             })
             .then(
                 () => {
-                    console.log("SUCCESS!")
+                    window.location.href = "/success"
                 },
                 (error) => {
                     console.log("FAILED...", error.text)
@@ -39,7 +40,7 @@ const BePart = () => {
                     onSubmit={sendEmail}
                 >
                     <label>
-                        <p className="text-lg text-slate-50">Entity name</p>
+                        <p className="text-lg text-slate-50">Entity name *</p>
                         <input
                             type="text"
                             name="entityName"
@@ -50,7 +51,7 @@ const BePart = () => {
                     <label>
                         <p className="text-lg text-slate-50">
                             Logo (provide a downlable link to Drive, WeTransfer,
-                            etc., with color and negative/white version)
+                            etc., with color and negative/white version) *
                         </p>
                         <input
                             type="url"
@@ -61,7 +62,7 @@ const BePart = () => {
                     </label>
                     <label>
                         <p className="text-lg text-slate-50">
-                            Description of the entity
+                            Description of the entity *
                         </p>
                         <textarea
                             name="description"
@@ -74,7 +75,7 @@ const BePart = () => {
                         <p className="text-lg text-slate-50">
                             Why would you like to be part of the ITGALL network
                             and why would you like to participate in the testing
-                            of technological solutions?
+                            of technological solutions? *
                         </p>
                         <textarea
                             name="why"
@@ -85,7 +86,7 @@ const BePart = () => {
                     </label>
                     <label>
                         <p className="text-lg text-slate-50">
-                            Does your entity have a Living Lab in operation?
+                            Does your entity have a Living Lab in operation? *
                         </p>
                         <textarea
                             name="operation"
@@ -196,7 +197,7 @@ const BePart = () => {
                     <label>
                         <p className="text-lg text-slate-50">
                             Can you adapt an area of ​​your center where you can
-                            carry out product testing?
+                            carry out product testing? *
                         </p>
                         <textarea
                             name="area"
@@ -207,7 +208,7 @@ const BePart = () => {
                     </label>
                     <label>
                         <p className="text-lg text-slate-50">
-                            Square meters of your Living Lab space
+                            Square meters of your Living Lab space *
                         </p>
                         <input
                             type="text"
@@ -216,12 +217,41 @@ const BePart = () => {
                             required
                         />
                     </label>
-
                     <label>
                         <p className="text-lg text-slate-50">
                             Lines of action in which you mainly act
                         </p>
-                        <select
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="social"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Social care
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="health"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Health care
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="greentech"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Greentech (Green One Health)
+                            </p>
+                        </label>
+                        {/* <select
                             name="actionLineAct"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-1/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
                         >
@@ -230,7 +260,7 @@ const BePart = () => {
                             <option value="greentech">
                                 Greentech (Green One Health)
                             </option>
-                        </select>
+                        </select> */}
                     </label>
 
                     <label>
@@ -238,7 +268,37 @@ const BePart = () => {
                             Lines of action in which you would like to
                             participate
                         </p>
-                        <select
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="socialLike"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Social care
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="healthLike"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Health care
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="greentechLike"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Greentech (Green One Health)
+                            </p>
+                        </label>
+                        {/* <select
                             name="actionLineLike"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-1/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
                         >
@@ -247,12 +307,12 @@ const BePart = () => {
                             <option value="greentech">
                                 Greentech (Green One Health)
                             </option>
-                        </select>
+                        </select> */}
                     </label>
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Typology of service provided
+                            Typology of service provided *
                         </p>
                         <textarea
                             name="service"
@@ -264,7 +324,7 @@ const BePart = () => {
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Typology and number of Living Lab users
+                            Typology and number of Living Lab users *
                         </p>
                         <textarea
                             name="users"
@@ -276,7 +336,7 @@ const BePart = () => {
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Differential value
+                            Differential value *
                         </p>
                         <textarea
                             name="differentialValue"
@@ -286,7 +346,9 @@ const BePart = () => {
                         />
                     </label>
                     <label>
-                        <p className="text-lg text-slate-50">Contact person</p>
+                        <p className="text-lg text-slate-50">
+                            Contact person *
+                        </p>
                         <input
                             type="text"
                             name="contactPerson"
@@ -295,7 +357,7 @@ const BePart = () => {
                         />
                     </label>
                     <label>
-                        <p className="text-lg text-slate-50">Contact email</p>
+                        <p className="text-lg text-slate-50">Contact email *</p>
                         <input
                             type="email"
                             name="contactEmail"
@@ -309,14 +371,13 @@ const BePart = () => {
                             type="url"
                             name="website"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
-                            required
                         />
                     </label>
 
                     <label>
                         <p className="text-lg text-slate-50">
                             Corporate video of the Living Lab (provide a
-                            downlable link: WeTransfer, Drive, etc.)
+                            downlable link: WeTransfer, Drive, etc.) *
                         </p>
                         <input
                             type="url"
@@ -329,7 +390,7 @@ const BePart = () => {
                     <label>
                         <p className="text-lg text-slate-50">
                             Human resources and profiles destined for the
-                            testing process
+                            testing process *
                         </p>
                         <textarea
                             name="humanResources"
@@ -343,7 +404,7 @@ const BePart = () => {
                         <p className="text-lg text-slate-50">
                             Do you have an internal process protocol?
                             Established protocol/specific process flow for
-                            testing
+                            testing *
                         </p>
                         <textarea
                             name="protocol"
@@ -355,7 +416,7 @@ const BePart = () => {
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Collaborations with other entities
+                            Collaborations with other entities *
                         </p>
                         <textarea
                             name="collaborations"
@@ -368,7 +429,7 @@ const BePart = () => {
                     <label>
                         <p className="text-lg text-slate-50">
                             Estimated/approximate costs by type of service
-                            (including human resources involved, cost/hour)
+                            (including human resources involved, cost/hour) *
                         </p>
                         <textarea
                             name="costs"
@@ -380,7 +441,7 @@ const BePart = () => {
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Previous testings carried out
+                            Previous testings carried out *
                         </p>
                         <textarea
                             name="previousTestings"
@@ -389,7 +450,18 @@ const BePart = () => {
                             required
                         />
                     </label>
-
+                    <label className="flex gap-2">
+                        <input
+                            type="checkbox"
+                            name="comfirm"
+                            className="rounded-2xl w-4"
+                            required
+                        />
+                        <p className="text-base text-slate-50">
+                            I comfirm that I have read, comprehend and accept
+                            the ITGALL privacy policy
+                        </p>
+                    </label>
                     <button
                         type="submit"
                         className="bg-amarillo hover:bg-lila-400 px-4 py-2 rounded-3xl w-1/4 font-bold text-base text-lila-900 lg:text-2xl hover:text-amarillo transition-all duration-300"

@@ -9,6 +9,7 @@ const SinglePost = ({ posts }) => {
     const choosePost = async () => {
         const postFinal = posts.filter((post) => post.slug === id)
         setPost(postFinal[0])
+        document.title = postFinal[0].title.rendered
     }
 
     useEffect(() => {

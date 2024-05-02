@@ -1,6 +1,7 @@
 import React from "react"
 import { useEffect, useState } from "react"
 import { useLocation, useRoutes } from "react-router-dom"
+import ReactGA from "react-ga4"
 import { AnimatePresence } from "framer-motion"
 import ScrollToTop from "./components/ScrollToTop.jsx"
 import Navbar from "./components/Navbar.jsx"
@@ -19,6 +20,7 @@ import TesteoPage from "./components/TesteoPage.jsx"
 import ColaboradorPage from "./components/ColaboradorPage.jsx"
 import LegalNotice from "./pages/LegalNotice.jsx"
 import PrivacyCookies from "./pages/PrivacyCookies.jsx"
+import Success from "./pages/Success.jsx"
 
 const App = () => {
     const [posts, setPosts] = useState([])
@@ -158,9 +160,25 @@ const App = () => {
             path: "/privacy-cookies",
             element: <PrivacyCookies />,
         },
+        {
+            path: "/success",
+            element: <Success />,
+        },
     ])
 
     const location = useLocation()
+
+    useEffect(() => {
+        ReactGA.initialize("G-BLFCKDYT8S")
+    }, [])
+
+    useEffect(() => {
+        ReactGA.send({
+            hitType: "pageview",
+            page: location.pathname,
+            title: document.title,
+        })
+    }, [location])
 
     if (!element) return null
 

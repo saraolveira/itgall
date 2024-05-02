@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser"
 import PageTransition from "../components/PageTransition.jsx"
 
 const TestITGALL = () => {
+    document.title = "Test with ITGALL"
     const form = useRef()
 
     const sendEmail = (e) => {
@@ -14,7 +15,7 @@ const TestITGALL = () => {
             })
             .then(
                 () => {
-                    console.log("SUCCESS!")
+                    window.location.href = "/success"
                 },
                 (error) => {
                     console.log("FAILED...", error.text)
@@ -40,7 +41,7 @@ const TestITGALL = () => {
                     onSubmit={sendEmail}
                 >
                     <label>
-                        <p className="text-lg text-slate-50">Project name</p>
+                        <p className="text-lg text-slate-50">Project name *</p>
                         <input
                             type="text"
                             name="projectName"
@@ -49,7 +50,7 @@ const TestITGALL = () => {
                         />
                     </label>
                     <label>
-                        <p className="text-lg text-slate-50">Entity name</p>
+                        <p className="text-lg text-slate-50">Entity name *</p>
                         <input
                             type="text"
                             name="entityName"
@@ -58,7 +59,9 @@ const TestITGALL = () => {
                         />
                     </label>
                     <label>
-                        <p className="text-lg text-slate-50">Contact person</p>
+                        <p className="text-lg text-slate-50">
+                            Contact person *
+                        </p>
                         <input
                             type="text"
                             name="contactPerson"
@@ -67,7 +70,7 @@ const TestITGALL = () => {
                         />
                     </label>
                     <label>
-                        <p className="text-lg text-slate-50">Contact email</p>
+                        <p className="text-lg text-slate-50">Contact email *</p>
                         <input
                             type="email"
                             name="contactEmail"
@@ -85,7 +88,7 @@ const TestITGALL = () => {
                     </label>
                     <label>
                         <p className="text-lg text-slate-50">
-                            Short description of the project
+                            Short description of the project *
                         </p>
                         <textarea
                             name="description"
@@ -97,7 +100,7 @@ const TestITGALL = () => {
                     <label>
                         <p className="text-lg text-slate-50">
                             Information of the product/service that's going to
-                            be tested (need it answers to, target, etc.)
+                            be tested (need it answers to, target, etc.) *
                         </p>
                         <textarea
                             name="productServiceInformation"
@@ -108,7 +111,7 @@ const TestITGALL = () => {
                     </label>
                     <label>
                         <p className="text-lg text-slate-50">
-                            Differential value
+                            Differential value *
                         </p>
                         <textarea
                             name="differentialValue"
@@ -119,7 +122,7 @@ const TestITGALL = () => {
                     </label>
                     <label>
                         <p className="text-lg text-slate-50">
-                            Estimated investment budget
+                            Estimated investment budget *
                         </p>
                         <input
                             type="text"
@@ -131,20 +134,98 @@ const TestITGALL = () => {
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Services required (market study, co-creation, design
-                            consulting, support service, testing, scalability)
+                            Services required
                         </p>
-                        <textarea
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="marketStudy"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Market Study
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="cocreation"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Co-creation
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="designConsulting"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Design consulting
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="supportService"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Support service
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="testing"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">Testing</p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="scalability"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">
+                                Scalability
+                            </p>
+                        </label>
+                        <label className="flex gap-2">
+                            <input
+                                type="checkbox"
+                                name="others"
+                                className="rounded-2xl w-4"
+                            />
+                            <p className="text-base text-slate-50">Others</p>
+                        </label>
+
+                        {/* <textarea
                             name="servicesRequired"
                             rows="6"
                             className="border-0 shadow-sm px-2 py-1 rounded-2xl w-full ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100 lg:w-4/5"
                             required
+                        /> */}
+                    </label>
+
+                    <label>
+                        <p className="text-lg text-slate-50">
+                            If you selected "Others" in the previous question,
+                            indicate them here:
+                        </p>
+                        <input
+                            type="text"
+                            name="othersChosen"
+                            className="border-0 shadow-sm px-2 py-1 rounded-2xl lg:w-2/5 ring-1 ring-gray-300 ring-inset focus:ring-2 focus:ring-inset focus:ring-lila-100"
                         />
                     </label>
 
                     <label>
                         <p className="text-lg text-slate-50">
-                            Relation with other projects or funding sources
+                            Relation with other projects or funding sources *
                         </p>
                         <textarea
                             name="relationProjectsFunding"
@@ -153,7 +234,18 @@ const TestITGALL = () => {
                             required
                         />
                     </label>
-
+                    <label className="flex gap-2">
+                        <input
+                            type="checkbox"
+                            name="comfirm"
+                            className="rounded-2xl w-4"
+                            required
+                        />
+                        <p className="text-base text-slate-50">
+                            I comfirm that I have read, comprehend and accept
+                            the ITGALL privacy policy
+                        </p>
+                    </label>
                     <button
                         type="submit"
                         className="bg-amarillo hover:bg-lila-400 px-4 py-2 rounded-3xl w-1/4 font-bold text-base text-lila-900 lg:text-2xl hover:text-amarillo transition-all duration-300"

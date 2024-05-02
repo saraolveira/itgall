@@ -1,4 +1,5 @@
 const LegalNotice = () => {
+    document.title = "ITGALL legal notice"
     return (
         <div className="p-8 lg:p-20 w-full min-h-[calc(100svh-13rem)]">
             <h2 className="font-bold text-2xl">

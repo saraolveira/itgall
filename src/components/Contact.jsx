@@ -1,4 +1,5 @@
 import TeamMember from "./TeamMember.jsx"
+
 const Contact = () => {
     return (
         <div className="relative bg-lila-900 p-8 lg:p-20 w-screen min-h-[calc(100svh-13rem)]">
@@ -11,17 +12,11 @@ const Contact = () => {
             </h2>
             <div className="relative z-20 lg:gap-10 lg:grid lg:grid-cols-2 2xl:grid-cols-3 lg:auto-cols-max">
                 <TeamMember
-                    img="gisela.jpg"
-                    nombre="Gisela García-Álvarez"
-                    mail="gerencia@clustersaude.com"
-                    cargo="Managing Director"
-                />
-                {/* <TeamMember
                     img="ivan.jpg"
                     nombre="Iván Rarís Filgueira"
                     mail="gerencia@clustersaude.com"
                     cargo="Managing Director"
-                /> */}
+                />
                 <TeamMember
                     img="nieves.jpg"
                     nombre="Nieves Freire Barea"
@@ -52,6 +47,15 @@ const Contact = () => {
                     mail="admin@clustersaude.com"
                     cargo="Administration"
                 />
+            </div>
+            <div className="flex justify-center mt-10 p-0">
+                <a
+                    href="/Dossier_ITGALL.pdf"
+                    target="_blank"
+                    className="bg-amarillo hover:bg-lila-900 px-4 py-2 rounded-3xl font-bold text-base text-lila-900 lg:text-2xl hover:text-amarillo transition-all duration-300"
+                >
+                    Download the ITGALL Dossier
+                </a>
             </div>
         </div>
     )
